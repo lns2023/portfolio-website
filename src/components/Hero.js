@@ -18,7 +18,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className={styles.title}
         >
-          Hi, I'm a <span className={styles.highlight}>Web Developer</span>
+          Hi, I'm a <span className={styles.highlight}>Fullstack Developer</span>
         </motion.h1>
 
         <motion.p

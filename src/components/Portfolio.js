@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import styles from './Portfolio.module.css'
 import { supabase } from '../lib/supabase'
@@ -67,6 +67,27 @@ const projects = [
     title: 'Mavent Inicio',
     url: 'https://inicio.mavent.com.au/',
     description: 'Modern business platform',
+    category: 'Business'
+  },
+  {
+    id: 10,
+    title: 'Svelte Admin Dashboard',
+    url: 'https://svelte-admin-dashboard.vercel.app/',
+    description: 'Modern admin dashboard built with SvelteKit',
+    category: 'Web App'
+  },
+  {
+    id: 11,
+    title: 'IM Bridge Telegram',
+    url: 'https://imbridgetelegram.bid1m.net/',
+    description: 'Telegram integration bridge application',
+    category: 'Web App'
+  },
+  {
+    id: 12,
+    title: 'SalesNexus',
+    url: 'https://salesnexus.com',
+    description: 'CRM and email marketing automation platform',
     category: 'Business'
   }
 ]
@@ -145,37 +166,44 @@ export default function Portfolio() {
         ))}
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className={styles.grid}
-      >
-        {filteredProjects.map((project) => (
-          <motion.a
-            key={project.id}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={itemVariants}
-            whileHover={{ y: -10, scale: 1.02 }}
-            className={styles.card}
-          >
-            <div className={styles.cardContent}>
-              <div className={styles.cardHeader}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <span className={styles.category}>{project.category}</span>
-              </div>
-              <p className={styles.projectDescription}>{project.description}</p>
-              <div className={styles.cardFooter}>
-                <span className={styles.link}>Visit Site →</span>
-              </div>
-            </div>
-            <div className={styles.cardGlow}></div>
-          </motion.a>
-        ))}
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={filter}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          className={styles.grid}
+        >
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+              style={{ cursor: 'pointer' }}
+            >
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.card}
+              >
+                <div className={styles.cardContent}>
+                  <div className={styles.cardHeader}>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                    <span className={styles.category}>{project.category}</span>
+                  </div>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <div className={styles.cardFooter}>
+                    <span className={styles.link}>Visit Site →</span>
+                  </div>
+                </div>
+                <div className={styles.cardGlow}></div>
+              </a>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </section>
   )
 }
