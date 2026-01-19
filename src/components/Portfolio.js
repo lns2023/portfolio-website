@@ -89,6 +89,48 @@ const projects = [
     url: 'https://salesnexus.com',
     description: 'CRM and email marketing automation platform',
     category: 'Business'
+  },
+  {
+    id: 13,
+    title: 'DriveMe',
+    url: 'https://driveme-neon.vercel.app/drivers',
+    description: 'Driver management and booking platform',
+    category: 'Web App'
+  },
+  {
+    id: 14,
+    title: 'McLaud Technology',
+    url: 'https://mclaud.technology/',
+    description: 'DTF printers, UV printers & printing supplies',
+    category: 'Shopify'
+  },
+  {
+    id: 15,
+    title: 'McLaud Technology USA',
+    url: 'https://us.mclaudtechnology.com/',
+    description: 'Regional US store for DTF printing equipment',
+    category: 'Shopify'
+  },
+  {
+    id: 16,
+    title: 'Maguire Shoes',
+    url: 'https://www.us.maguireshoes.com/',
+    description: 'Women\'s leather shoes & accessories from Canada',
+    category: 'Shopify'
+  },
+  {
+    id: 17,
+    title: 'Pot Gang',
+    url: 'https://www.potgang.co.uk/',
+    description: 'UK gardening subscription boxes for home growers',
+    category: 'Shopify'
+  },
+  {
+    id: 18,
+    title: 'Mignon',
+    url: 'http://www.mignon-shop.com',
+    description: 'Curated kitchen & lifestyle goods boutique',
+    category: 'Shopify'
   }
 ]
 
