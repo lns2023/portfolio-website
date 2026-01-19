@@ -131,6 +131,27 @@ const projects = [
     url: 'http://www.mignon-shop.com',
     description: 'Curated kitchen & lifestyle goods boutique',
     category: 'Shopify'
+  },
+  {
+    id: 19,
+    title: 'Rain or Shine Paint',
+    url: 'https://apkpure.com/rain-or-shine-paint/com.socialconzdigital.rainorshineapp',
+    description: 'Paint color picker & calculator app (iOS & Android)',
+    category: 'Mobile App'
+  },
+  {
+    id: 20,
+    title: 'PCO Official Gazette (Android)',
+    url: 'https://play.google.com/store/apps/details?id=ph.gov.gazettereader',
+    description: 'Official Philippine government gazette reader app',
+    category: 'Mobile App'
+  },
+  {
+    id: 21,
+    title: 'PCO Official Gazette (iOS)',
+    url: 'https://apps.apple.com/ph/app/pco-official-gazette/id1667703470',
+    description: 'Official Philippine government gazette reader app',
+    category: 'Mobile App'
   }
 ]
 
